@@ -6,4 +6,5 @@ module.exports = {
     db.User
     .create(req.body)
   },
+
 };
