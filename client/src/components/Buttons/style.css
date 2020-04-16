@@ -1,0 +1,15 @@
+.btn{
+    margin-bottom: 2rem;
+    background-color: #747474;
+    padding: 1rem;
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+  }
+
+  
+  .login{
+      padding-left: 3rem;
+      color: #404da3f3;
+      font-size: larger;
+  }

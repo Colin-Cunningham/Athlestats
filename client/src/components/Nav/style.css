@@ -1,0 +1,9 @@
+#nav{
+    height: 12rem;
+    background-image: url("./Logo.jpg");
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #747474;
+    margin-bottom: 4rem;
+  }

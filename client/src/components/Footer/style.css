@@ -1,0 +1,17 @@
+footer{
+    width: 100%;
+    background-color: #747474;
+    height: 7rem;
+    bottom: 0;
+    left: 0
+  }
+
+
+  .copyright{
+    background-color: #404da3f3;
+    text-align: center;
+    color: white;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
