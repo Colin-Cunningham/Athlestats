@@ -7,6 +7,8 @@ import Wrapper from "./components/Wrapper/Index"
 import Buttons from "./components/Buttons/index"
 import Recruiter from "./components/Recruiter/index";
 import Coach from "./components/Coach/index";
+import Login from "./pages/Login"
+import Signup from "./pages/Signup"
 
 function App() {
   return (
@@ -26,6 +28,12 @@ function App() {
           </Route>
           <Route exact path={["/recruiter"]}>
             <Recruiter />
+          </Route>
+          <Route exact path={["/login"]}>
+            <Login />
+          </Route>
+          <Route exact path={["/signup"]}>
+            <Signup />
           </Route>
           </Wrapper>
         </Switch>

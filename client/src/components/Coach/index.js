@@ -21,6 +21,9 @@ function Coach(){
           <br />
           <p>A MAJOR goal of AthleStat is to connect you with Coachs in safe, productive ways. All Coachs are verified, and you will send you an email if interested. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus, iusto tempora unde, labore hic velit perferendis quod veritatis eum assumenda est molestias voluptatibus neque modi architecto maxime deserunt autem.</p>
         </div>
+        <a type="a" href="/signup" value="Sign Up" className="signUp">
+       Sound good for you? Register for free here!
+      </a>
       </div>
     </div>
     )
