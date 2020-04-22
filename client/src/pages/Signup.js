@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Nav from "../components/Nav/index";
+import Wrapper from "../components/Wrapper/Index";
 
 export default class Login extends Component {
   constructor(props) {
@@ -7,7 +9,7 @@ export default class Login extends Component {
       email: "",
       password: "",
       category: "",
-      name: ""
+      name: "",
     };
   }
   handleInputChange = (event) => {
@@ -42,54 +44,59 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form className="login" onSubmit={this.onSubmit}>
-        <h1>Sign up Below!</h1>
-        <input
-          className="form-group"
-          type="email"
-          name="email"
-          placeholder="Enter email"
-          value={this.state.email}
-          onChange={this.handleInputChange}
-          required
-        />
-        <input
-          className="form-group"
-          type="password"
-          name="password"
-          placeholder="Enter password"
-          value={this.state.password}
-          onChange={this.handleInputChange}
-          required
-        />
-        <h1>Tell us a bit about yourself</h1>
-        <div className="form-group">
-          <label for="exampleFormControlSelect1">Example select</label>
-          <select
-            className="form-control"
-            type="category"
-            name="category"
-            placeholder="Enter password"
-            value={this.state.category}
-            onChange={this.handleInputChange}
-            required
-          >
-            <option value="coach">Coach</option>
-            <option value="player">Player</option>
-            <option value="recruiter">Recruiter</option>
-          </select>
-        </div>
-        <input
-          className="form-group"
-          type="name"
-          name="name"
-          placeholder="Enter Name"
-          value={this.state.name}
-          onChange={this.handleInputChange}
-          required
-        />
-        <input type="submit" value="Submit" />
-      </form>
+      <>
+        <Nav />
+        <Wrapper>
+          <form className="login" onSubmit={this.onSubmit}>
+            <h1>Sign up Below!</h1>
+            <input
+              className="form-group"
+              type="email"
+              name="email"
+              placeholder="Enter email"
+              value={this.state.email}
+              onChange={this.handleInputChange}
+              required
+            />
+            <input
+              className="form-group"
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              value={this.state.password}
+              onChange={this.handleInputChange}
+              required
+            />
+            <h1>Tell us a bit about yourself</h1>
+            <div className="form-group">
+              <label htmlFor="exampleFormControlSelect1">Example select</label>
+              <select
+                className="form-control"
+                type="category"
+                name="category"
+                placeholder="Enter password"
+                value={this.state.category}
+                onChange={this.handleInputChange}
+                required
+              >
+                <option value="Coach">Coach</option>
+                <option value="Player">Player</option>
+                <option value="Recruiter">Recruiter</option>
+              </select>
+            </div>
+            <input
+              className="form-group"
+              type="name"
+              name="name"
+              placeholder="Enter Name"
+              value={this.state.name}
+              onChange={this.handleInputChange}
+              required
+            />
+            <input type="submit" value="Submit" />
+          </form>
+        </Wrapper>
+      </>
     );
   }
 }

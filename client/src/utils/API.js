@@ -1,10 +1,9 @@
 import axios from "axios";
 
 export default {
-  signup: function() {
-    return axios.post("/api/register");
+ 
+  getInfo: function(email) {
+    return axios.get("/api/information/" + email);
   },
-  signin: function() {
-    return axios.post("/api/authenticate");
-  },
+
 };

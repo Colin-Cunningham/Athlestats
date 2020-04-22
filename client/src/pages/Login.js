@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import Nav from "../components/Nav/index"
+import Wrapper from "../components/Wrapper/Index"
 
 export default class Login extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export default class Login extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    fetch('/api/authenticate', {
+   fetch('/api/authenticate', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
@@ -28,7 +29,8 @@ export default class Login extends Component {
     })
     .then(res => {
       if (res.status === 200) {
-        window.location.href = "/"
+        console.log(res)
+        window.location.href = "/dash"
       } else {
         const error = new Error(res.error);
         throw error;
@@ -43,6 +45,9 @@ export default class Login extends Component {
 
   render() {
     return (
+      <>
+      <Nav />
+      <Wrapper>
       <form className="login" onSubmit={this.onSubmit}>
         <h1>Login Below!</h1>
         <input
@@ -65,6 +70,8 @@ export default class Login extends Component {
         />
        <input type="submit" value="Submit"/>
       </form>
+      </Wrapper>
+      </>
     );
   }
 }

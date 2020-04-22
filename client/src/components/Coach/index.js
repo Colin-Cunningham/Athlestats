@@ -1,8 +1,13 @@
 import React from "react"
-
+import Nav from "../Nav/index"
+import Wrapper from "../Wrapper/Index";
+import Footer from "../Footer/Index"
 
 function Coach(){
     return(
+      <>
+      <Nav />
+      <Wrapper>
     <div className="container-fluid">
         <h1>Coach</h1>
       <div className="bd-highlight">
@@ -26,6 +31,9 @@ function Coach(){
       </a>
       </div>
     </div>
+    </Wrapper>
+    <Footer />
+    </>
     )
 }
 
