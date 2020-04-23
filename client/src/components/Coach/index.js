@@ -1,7 +1,7 @@
 import React from "react"
 import Nav from "../Nav/index"
 import Wrapper from "../Wrapper/Index";
-import Footer from "../Footer/Index"
+
 
 function Coach(){
     return(
@@ -32,7 +32,7 @@ function Coach(){
       </div>
     </div>
     </Wrapper>
-    <Footer />
+
     </>
     )
 }

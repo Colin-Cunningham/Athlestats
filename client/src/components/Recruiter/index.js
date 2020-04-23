@@ -1,7 +1,7 @@
 import React from "react"
 import Nav from "../Nav/index"
 import Wrapper from "../Wrapper/Index";
-import Footer from "../Footer/Index"
+
 
 function Recruiter(){
     return(
@@ -32,7 +32,6 @@ function Recruiter(){
       </div>
     </div>
     </Wrapper>
-    <Footer />
     </>
     )
 }

@@ -1,7 +1,6 @@
 import React from "react"
 import Nav from "../Nav/index"
 import Wrapper from "../Wrapper/Index";
-import Footer from "../Footer/Index"
 
 function Player(){
     return(
@@ -32,7 +31,6 @@ function Player(){
       </div>
     </div>
     </Wrapper>
-    <Footer />
     </>
     )
 }

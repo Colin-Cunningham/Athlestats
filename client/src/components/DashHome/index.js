@@ -30,7 +30,7 @@ function DashHome(props) {
       </div>
       <div id="teams">
         <h3>Teams</h3>
-        <button>{team.name}</button>
+        <button>{team.highschool}</button>
         <button> + Create New Team</button>
       </div>
     </>

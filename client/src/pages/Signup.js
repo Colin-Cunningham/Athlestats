@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import Nav from "../components/Nav/index";
 import Wrapper from "../components/Wrapper/Index";
 
-export default class Login extends Component {
+export default class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
       password: "",
-      category: "",
+      category: "Coach",
       name: "",
     };
   }
