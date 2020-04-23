@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import API from "../../utils/API";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import DashHome from "../../components/DashHome/index"
 
 function getCookie(name) {
@@ -31,41 +31,34 @@ const token = parseJwt(value);
 
 function DashNav() {
   const [user, setUser] = useState([]);
+ 
 
   const { email } = token;
   useEffect(() => {
     API.getInfo(email)
-      .then((res) => setUser(res.data))
+      .then((res) => {setUser(res.data); console.log(res.data)})
       .catch((err) => console.log(err));
   }, []);
 
+
   return (
     <div className="over">
-      <div>
-        <div id="holder" className="jumbotron jumbotron-fluid">
-          <div className="container">
-            <h1>Welcome to Athlestat</h1>
-            <h5>
-              {user.category} {user.name}
-            </h5>
-          </div>
-        </div>
+      <div id="holder">
+        <p></p>
       </div>
       <div className="sidenav">
-        <a href="dash/home">Home</a>
-        <a href="services">Teams</a>
-        <a href="clients">Connect</a>
-        <a href="contact">Profile</a>
-        <a href="about">Settings</a>
+        <Link to={"dash/home/" + user.teamID}>Home</Link>
+        <Link to="dash/teams">Teams</Link>
+        <Link to="dash/clients">Connect</Link>
+        <Link to="dash/contact">Profile</Link>
+        <Link to="dash/about">Settings</Link>
       </div>
       <div className="main">
-        <Router>
           <Switch>
-            <Route path={["/dash/home"]}> 
-              <DashHome  />
+            <Route path={"/dash/home/:id"}> 
+              <DashHome name={user.name} category={user.category}  />
             </Route>
           </Switch>
-          </Router>
       </div>
     </div>
   );

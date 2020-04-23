@@ -1,14 +1,17 @@
 #holder{
-    height: fit-content;
+    height: 4rem;
     text-align: center;
-    width: 66%;
-    margin: 0 auto
+    width: 100%;
+    background-image: url("./dash.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 3rem;
 }
 
 .sidenav {
     height: 60%;
     width: 60px;
-    margin-top: 14rem;
+    margin-top: 8rem;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -33,14 +36,10 @@
   
   .main {
     margin-left: 60px; /* Same as the width of the sidenav */
-    padding: 0px 15px;
-
+    padding: 1rem
   }
 
-  #root{
-    background-color: #f9f9f9;;
-  }
-  
+
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}

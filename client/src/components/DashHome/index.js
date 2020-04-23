@@ -1,25 +1,40 @@
-import React from "react";
-import styled, {keyframes} from "styled-components";
-import {fadeIn} from "react-animations";
+import React, { useState, useEffect } from "react";
 import "./style.css";
-const fadeAnimation = keyframes`${fadeIn}`
+import API from "../../utils/API";
+import { useParams } from "react-router-dom";
 
-const Fade1 = styled.div`animation: 8s ${fadeAnimation}`
-const Fade2 = styled.div`animation: 3s ${fadeAnimation}`
+function DashHome(props) {
+  const [team, setTeam] = useState([]);
 
+  const { id } = useParams();
 
+  useEffect(() => {
+    console.log(id);
 
+    API.getTeam(id)
+      .then((res) => {setTeam(res.data); console.log(res.data)})
+      .catch((err) => console.log(err));
+  }, [id]);
 
-function DashHome(props){
-    return(
-        <div> 
-            <h3>Hello</h3>
-
-
-        </div>
-    )
+  return (
+    <>
+      <h4 className="welcome">Welcome back {props.category}</h4>
+      <div id="container">
+        <img
+          className="ui centered circular image"
+          id="profile"
+          src="https://via.placeholder.com/150"
+          alt="..."
+        />
+        <h3 id="name">{props.name}</h3>
+      </div>
+      <div id="teams">
+        <h3>Teams</h3>
+        <button>{team.name}</button>
+        <button> + Create New Team</button>
+      </div>
+    </>
+  );
 }
 
-
-
-export default DashHome
+export default DashHome;

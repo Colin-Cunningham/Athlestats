@@ -4,8 +4,11 @@ const User = require("../../controllers/userController")
 
 router.route("/:email")
    .get(User.findByEmail)
+
+
    
-   
+router.route("/:email/:teamID")
+   .put(User.update)
    
 
 module.exports = router

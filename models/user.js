@@ -7,8 +7,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   category: { type: String, required: true },
   name: { type: String, required: true },
-  teamID: [{ type: String, required: false }],
-  motto: {type: String, required:false}
+  teamID: { type: String, required: false }
 });
 
 

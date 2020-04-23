@@ -55,5 +55,11 @@ module.exports = {
       .findOne({ email: req.params.email })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-   }
+   },
+   update: function(req, res) {
+    db.User
+      .updateOne({ email: req.params.email }, { $set: { teamID: req.params.teamID } })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
 };
