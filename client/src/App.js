@@ -1,20 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Player from "./components/Player/index";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer/Index";
-import Wrapper from "./components/Wrapper/Index"
-import Buttons from "./components/Buttons/index"
+import Buttons from "./components/Buttons/index";
 import Recruiter from "./components/Recruiter/index";
 import Coach from "./components/Coach/index";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Dashnav from "./pages/UserDash/index"
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
         <Switch>
-          <Wrapper>
           <Route exact path={["/", "/home"]}>
             <Buttons />
           </Route>
@@ -27,9 +25,16 @@ function App() {
           <Route exact path={["/recruiter"]}>
             <Recruiter />
           </Route>
-          </Wrapper>
+          <Route exact path={["/login"]}>
+            <Login />
+          </Route>
+          <Route exact path={["/signup"]}>
+            <Signup />
+          </Route>
+          <Route path={["/dash"]}>
+            <Dashnav />
+          </Route>
         </Switch>
-        <Footer />
       </div>
     </Router>
   );

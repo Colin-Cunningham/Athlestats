@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Nav from "../Nav/index"
+import Wrapper from "../Wrapper/Index";
+import Footer from "../Footer/Index"
 import "./style.css";
 
 function Buttons() {
   return (
-    <div id="directOne" class="shadow p-3 mb-5 rounded">
+    <>
+    <Nav />
+    <Wrapper>
+    <div id="direct" className="shadow p-3 mb-5 rounded">
       <Link to="/coach">
         <button type="button" value="coach" className="btn btn-lg btn-block">
           Coaches
@@ -28,6 +34,9 @@ function Buttons() {
         Already a member? Log in here!
       </a>
     </div>
+    </Wrapper>
+    <Footer />
+    </>
   );
 }
 

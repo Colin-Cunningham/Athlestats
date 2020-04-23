@@ -3,10 +3,22 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const cookieParser = require('cookie-parser');
+const withAuth = require('./middleware');
+
+
+app.get('/api/secret', withAuth, function(req, res) {
+  res.send('The password is potato');
+});
+
+app.get('/checkToken', withAuth, function(req, res) {
+  res.sendStatus(200);
+});
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser())
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

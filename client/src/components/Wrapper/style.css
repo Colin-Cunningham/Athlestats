@@ -1,3 +1,7 @@
 .wrapper{
-    height: fit-content;
+    height: 100%;
+    background-color: #f8c057dc;
+    padding-top: 3.5rem;
+    margin-bottom: -3rem;
+    padding-bottom: 4rem;
 }

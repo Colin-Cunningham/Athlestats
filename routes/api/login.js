@@ -3,10 +3,8 @@ const User = require("../../controllers/userController")
 // POST route to register a user
 
 router.route("/")
-  .post(User.create)
+   .post(User.authenticate)
+   
 
 module.exports = router
-
-
-
 

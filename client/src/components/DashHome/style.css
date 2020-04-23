@@ -1,0 +1,35 @@
+#name{
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    width: 44%;
+}
+
+#container{
+    position: relative;
+    text-align: center;
+}
+
+.welcome{
+    text-align: center;
+    width: 100%;
+}
+
+
+#teams{
+    
+    margin-top: 3rem;
+    min-height: 4rem;
+    height: fit-content;
+    text-align: center;
+}
+
+#teams h3 {
+    width: 88%;
+    margin: 0 auto;
+    background-color: #747474;
+    font-size: 2rem;
+    color: white;
+    transform: skew(-10deg);
+    margin-bottom: 2rem;
+}
