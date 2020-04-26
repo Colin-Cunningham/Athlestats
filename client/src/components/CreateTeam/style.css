@@ -1,0 +1,35 @@
+#teamForm{
+    text-align: center;
+}
+
+
+
+.form-group{
+   
+    height: 10rem;
+    text-align: center;
+}
+
+
+.form-control{
+    width: 66%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.form-control-file{
+    width: 66%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.inputName{
+    margin-bottom: 0px;
+    text-emphasis: underline;
+    font-family: 'Spectral SC', serif;
+    font-weight: 800;
+    font-size: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    color: #404da3f3
+}

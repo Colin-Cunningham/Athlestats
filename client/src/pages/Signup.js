@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav/index";
 import Wrapper from "../components/Wrapper/Index";
+import "./style.css"
 
 export default class Signup extends Component {
   constructor(props) {
@@ -47,10 +48,10 @@ export default class Signup extends Component {
       <>
         <Nav />
         <Wrapper>
-          <form className="login" onSubmit={this.onSubmit}>
-            <h1>Sign up Below!</h1>
+          <form className="signup" onSubmit={this.onSubmit}>
+            <h1 className="jumbotron">Sign up Below!</h1>
             <input
-              className="form-group"
+              className="form-control"
               type="email"
               name="email"
               placeholder="Enter email"
@@ -59,7 +60,7 @@ export default class Signup extends Component {
               required
             />
             <input
-              className="form-group"
+              className="form-control"
               type="password"
               name="password"
               placeholder="Enter password"
@@ -67,9 +68,8 @@ export default class Signup extends Component {
               onChange={this.handleInputChange}
               required
             />
-            <h1>Tell us a bit about yourself</h1>
-            <div className="form-group">
-              <label htmlFor="exampleFormControlSelect1">Example select</label>
+            <h1 className="jumbotron">Tell us a bit about yourself</h1>
+            <div className="form-control">
               <select
                 className="form-control"
                 type="category"
@@ -85,7 +85,7 @@ export default class Signup extends Component {
               </select>
             </div>
             <input
-              className="form-group"
+              className="form-control"
               type="name"
               name="name"
               placeholder="Enter Name"

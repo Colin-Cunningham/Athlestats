@@ -7,7 +7,7 @@ router.route("/:email")
 
 
    
-router.route("/:email/:teamID")
+router.route("/:email/:id")
    .put(User.update)
    
 

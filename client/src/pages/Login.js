@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from "../components/Nav/index"
 import Wrapper from "../components/Wrapper/Index"
+import {Link} from 'react-router-dom'
 
 export default class Login extends Component {
   constructor(props) {
@@ -30,7 +31,6 @@ export default class Login extends Component {
     .then(res => {
       if (res.status === 200) {
         console.log(res)
-        window.location.href = "/dash"
       } else {
         const error = new Error(res.error);
         throw error;
@@ -68,7 +68,7 @@ export default class Login extends Component {
           onChange={this.handleInputChange}
           required
         />
-       <input type="submit" value="Submit"/>
+       <Link to="/dash"><input type="submit" value="Submit"/></Link>
       </form>
       </Wrapper>
       </>

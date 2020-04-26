@@ -20,9 +20,11 @@ function App() {
           </Route>
           <Route exact path={["/player"]}>
             <Player />
+            <Footer />
           </Route>
           <Route exact path={["/coach"]}>
             <Coach />
+            <Footer />
           </Route>
           <Route exact path={["/recruiter"]}>
             <Recruiter />

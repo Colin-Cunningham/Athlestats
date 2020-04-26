@@ -8,13 +8,9 @@
   }
 
   
-  .login{
-      padding-left: 3rem;
-      color: #404da3f3;
-      font-size: larger;
-  }
 
 
  #direct{
      padding-top: 2rem;
+     height: 53vh;
  }

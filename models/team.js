@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 
 const TeamSchema = new mongoose.Schema({
-    sport: { type: String, required: true, unique: true },
+    sport: { type: String, required: true},
     name: { type: String, required: true },
     highschool:{type: String, required: true},
     logo: {type: String},
-    location:[{city: String},{state: String}],
+    location:[{city: String, state: String}],
     players:[]
   });
   
