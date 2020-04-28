@@ -5,19 +5,26 @@ import { Route, Switch, Link } from "react-router-dom";
 import DashHome from "../../components/DashHome/index"
 import CreateTeam from "../../components/CreateTeam/index"
 import Thank from "../../components/Thanks/index"
+import AddPlayer from "../../components/AddPlayers/index"
+
+  
 
 
 function DashNav() {
   const [user, setUser] = useState([]);
   
+  const value = getCookie('id');
+
+
   function getCookie(name) {
     var value = "; " + document.cookie;
+    console.log(document.cookie)
     var parts = value.split("; " + name + "=");
     if (parts.length === 2) return parts.pop().split(";").shift();
   }
   
-  var value = getCookie("id");
   
+
   function parseJwt(token) {
     var base64Url = token.split(".")[1];
     var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
@@ -33,10 +40,12 @@ function DashNav() {
     return JSON.parse(jsonPayload);
   }
   
-  const token = parseJwt(value);
+  const code = parseJwt(value);
   
+  console.log(code)
 
-  const { email } = token;
+  const  { email }  = code
+
   useEffect(() => {
     API.getInfo(email)
       .then((res) => {setUser(res.data); console.log(res.data)})
@@ -50,22 +59,28 @@ function DashNav() {
         <p></p>
       </div>
       <div className="sidenav">
-        <Link to={"dash/home/" + user.teamID}><i className="fas fa-home"></i></Link>
-        <Link to="dash/stats"><i className="fas fa-chart-pie"></i></Link>
-        <Link to="dash/clients"><i className="fas fa-football-ball"></i></Link>
-        <Link to="dash/contact"><i className="fas fa-user-alt"></i></Link>
-        <Link to="dash/about"><i className="fas fa-cog"></i></Link>
+        <Link to={"/dash"}><i className="fas fa-home"></i></Link>
+        <Link to={"/dash/home/" + user.teamID}><i className="fas fa-chart-pie"></i></Link>
+        <Link to={"dash/clients"}><i className="fas fa-football-ball"></i></Link>
+        <Link to={"dash/contact"}><i className="fas fa-user-alt"></i></Link>
+        <Link to={"dash/about"}><i className="fas fa-cog"></i></Link>
       </div>
       <div className="main">
           <Switch>
-            <Route exact path={["/dash", "/dash/home/:teamID"]}> 
+            <Route exact path={["/dash"]}> 
               <DashHome name={user.name} category={user.category} email={user.email}  />
             </Route>
-            <Route exact path={["/dash/team/:email"]}> 
+            <Route exact path={["/dash/coach/:email"]}> 
               <CreateTeam name={user.name} category={user.category} email={user.email}  />
+            </Route>
+            <Route exact path={["/dash/player/:email"]}> 
+              <AddPlayer name={user.name} category={user.category} email={user.email}  />
             </Route>
             <Route exact path={["/dash/:email/:id"]}> 
               <Thank />
+            </Route>
+            <Route exact path={["/dash", "/dash/home/:teamID"]}>
+            <DashHome name={user.name} category={user.category} email={user.email}  />
             </Route>
           </Switch>
       </div>

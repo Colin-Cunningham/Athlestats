@@ -23,7 +23,7 @@ function CreateTeam() {
       location: { city: city, state: state },
     })
       .then((res) => {
-        window.location.href = "/dash/" + email + "/" + res.data._id 
+        window.location.href = "/dash/create/" + email + "/" + res.data._id 
       }
       )
       .catch((err) => console.log(err));

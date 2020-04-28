@@ -33,7 +33,7 @@ function DashHome(props) {
       <div id="teams">
         <h3>Teams</h3>
         <button>{team.name}</button>
-        <Link to={"/dash/team/" + props.email }> + Create New Team</Link>
+        <Link to={"/dash/" + props.category + "/" + props.email }> + Create New Team</Link>
       </div>
     </>
   );

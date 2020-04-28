@@ -43,7 +43,8 @@ module.exports = {
             const token = jwt.sign(payload, secret, {
               expiresIn: '1h'
             });
-            res.cookie('id', token, { httpOnly: false })
+            console.log(res)
+            res.cookie('id', token, { httpOnly: false, withCredentials: true })
               .sendStatus(200);
           }
         });

@@ -21,7 +21,7 @@ function Thank(){
 
 
     return(
-        <div>Thankssssssssssssss</div>
+        <div>You have succsefully created your team! Click the football icon to see it!</div>
     )
 }
 
