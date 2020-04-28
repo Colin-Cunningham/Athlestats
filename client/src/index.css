@@ -13,7 +13,7 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-  
-  #root{
-    background-color:	#f8c057dc;
-  }
+
+html{
+ background-color: #f8c057dc;;
+}

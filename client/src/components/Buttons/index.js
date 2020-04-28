@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "../Nav/index"
 import Wrapper from "../Wrapper/Index";
-import Footer from "../Footer/Index"
 import "./style.css";
 
 function Buttons() {
@@ -35,7 +34,6 @@ function Buttons() {
       </a>
     </div>
     </Wrapper>
-    <Footer />
     </>
   );
 }

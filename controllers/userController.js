@@ -43,7 +43,8 @@ module.exports = {
             const token = jwt.sign(payload, secret, {
               expiresIn: '1h'
             });
-            res.cookie('id', token, { httpOnly: false })
+            console.log(res)
+            res.cookie('id', token, { httpOnly: false, withCredentials: true })
               .sendStatus(200);
           }
         });
@@ -58,7 +59,7 @@ module.exports = {
    },
    update: function(req, res) {
     db.User
-      .updateOne({ email: req.params.email }, { $set: { teamID: req.params.teamID } })
+      .updateOne({ email: req.params.email }, { $set: { teamID: req.params.id} })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

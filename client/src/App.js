@@ -7,6 +7,7 @@ import Coach from "./components/Coach/index";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashnav from "./pages/UserDash/index"
+import Footer from "./components/Footer/Index"
 
 function App() {
   return (
@@ -15,12 +16,15 @@ function App() {
         <Switch>
           <Route exact path={["/", "/home"]}>
             <Buttons />
+            <Footer />
           </Route>
           <Route exact path={["/player"]}>
             <Player />
+            <Footer />
           </Route>
           <Route exact path={["/coach"]}>
             <Coach />
+            <Footer />
           </Route>
           <Route exact path={["/recruiter"]}>
             <Recruiter />

@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import API from "../../utils/API";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function DashHome(props) {
   const [team, setTeam] = useState([]);
 
-  const { id } = useParams();
+  const { teamID } = useParams();
 
   useEffect(() => {
-    console.log(id);
-
-    API.getTeam(id)
+    console.log(teamID);
+    API.getTeam(teamID)
       .then((res) => {setTeam(res.data); console.log(res.data)})
       .catch((err) => console.log(err));
-  }, [id]);
+  }, [teamID]);
+
+
+
 
   return (
     <>
@@ -31,7 +33,7 @@ function DashHome(props) {
       <div id="teams">
         <h3>Teams</h3>
         <button>{team.name}</button>
-        <button> + Create New Team</button>
+        <Link to={"/dash/" + props.category + "/" + props.email }> + Create New Team</Link>
       </div>
     </>
   );

@@ -9,14 +9,14 @@
 }
 
 .sidenav {
-    height: 60%;
-    width: 60px;
-    margin-top: 8rem;
+    height: fit-content;
+    width: 40px;
+    margin-top: 15rem;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #f8c057dc;
+    background-color: #f8c057ad;
     overflow-x: hidden;
     padding-top: 20px;
     border-radius: 10px;
@@ -35,7 +35,7 @@
   }
   
   .main {
-    margin-left: 60px; /* Same as the width of the sidenav */
+    margin-left: 40px; /* Same as the width of the sidenav */
     padding: 1rem
   }
 
