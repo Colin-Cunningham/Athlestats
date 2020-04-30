@@ -5,23 +5,16 @@ import API from "../../utils/API";
 import { Link, useParams } from "react-router-dom";
 
 function Stats(props) {
-  const [player, setPlayer] = useState([]);
+  const [stats, setStats] = useState([]);
 
   useEffect(() => {
-    getPlayers();
+    // getStats();
   });
 
   const teamID = props.teamID;
-  const {playerID} = useParams()
+  const {statsID} = useParams()
 
-  function getPlayers() {
-    API.seePlayer(teamID, playerID)
-      .then((res) => {
-        setPlayer(res.data);console.log(res.data)
-      })
-      .catch((err) => console.log(err));
-  }
-
+ 
   return (
     <>
       <h4 className="welcome">Welcome back {props.category}</h4>

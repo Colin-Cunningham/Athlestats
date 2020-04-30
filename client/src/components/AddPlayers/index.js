@@ -10,13 +10,11 @@ function AddPlayers(props) {
   const [plemail, setPlemail] = useState("");
   const [cellPhone, setCellPhone] = useState("");
   const [highlight, setHighlight] = useState("");
-  const [position, setPosition] = useState("");
+  const [oPosition, setOposition] = useState("");
+  const [dPosition, setDposition] = useState("");
+  const [jerseyNumber, setJerseyNumber] = useState("");
 
   const { email } = useParams();
-
-
-
-
 
 
   function AddPlayer(event) {
@@ -28,7 +26,9 @@ function AddPlayers(props) {
       teamID: teamID,
       email: plemail,
       cellPhone: cellPhone,
-      position: position,
+      oPosition: oPosition,
+      dPosition: dPosition,
+      jerseyNumber: jerseyNumber,
       highlightTape: highlight,
       stats: [],
     })
@@ -36,7 +36,7 @@ function AddPlayers(props) {
         window.location.href =
           "/dash/" + email + "/" + teamID + "/" + props.category + "/create"
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert("Number already taken"));
   }
 
   return (
@@ -58,13 +58,29 @@ function AddPlayers(props) {
           onChange={(e) => setLast(e.target.value)}
           value={last}
         />
-         <p className="inputName">Position</p>
+         <p className="inputName">Offensive Position</p>
         <input
           type="text"
           className="form-control"
-          placeholder="Position"
-          onChange={(e) => setPosition(e.target.value)}
-          value={position}
+          placeholder="QB"
+          onChange={(e) => setOposition(e.target.value)}
+          value={oPosition}
+        />
+         <p className="inputName">Defensive Position</p>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="CB"
+          onChange={(e) => setDposition(e.target.value)}
+          value={dPosition}
+        />
+          <p className="inputName">Jersey Number</p>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Number"
+          onChange={(e) => setJerseyNumber(e.target.value)}
+          value={jerseyNumber}
         />
         <p className="inputName">Highschool ID</p>
         <input

@@ -10,6 +10,9 @@ export default {
   add2user: function(email, id) {
     return axios.put("/api/information/" + email, id);
   },
+  signup: function(data){
+    return axios.post("/api/register", data)
+  },
   getTeam: function(teamID) {
     return axios.get("/api/team/" + teamID);
   },

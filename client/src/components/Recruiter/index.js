@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../Nav/index";
 import Wrapper from "../Wrapper/Index";
-import Link from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Recruiter() {
   return (

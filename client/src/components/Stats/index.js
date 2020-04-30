@@ -45,21 +45,23 @@ function Stats(props) {
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Position</th>
+                <th scope="col">Offense</th>
+                <th scope="col">Defense</th>
               </tr>
             </thead>
             <tbody>
               {player.map((player) => (
                 <tr>
                   <th scope="row">{player.number}</th>
-                  
+
                   <Link to={"/dash/" + email + "/stats/" + player._id}>
                     <td>
                       {player.firstName} {player.lastName}
                     </td>
                   </Link>
 
-                  <td>{player.position}</td>
+                  <td>{player.oPosition}</td>
+                  <td>{player.dPosition}</td>
                 </tr>
               ))}
             </tbody>
