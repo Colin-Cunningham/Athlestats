@@ -20,10 +20,11 @@ const PlayerSchema = new mongoose.Schema({
   teamID:{type: String, required: true},
   email: {type: String, required: true},
   cellPhone: {type: Number, required: true},
-  position: {type: String},
-  number:{type: Number},
+  oPosition: {type: String},
+  dPosition: {type: String},
+  number:{type: Number, unique: true},
   highlightTape:{type: String},
-  stats:[]
+  stats:[StatsSchema]
 });
 
 const TeamSchema = new mongoose.Schema({

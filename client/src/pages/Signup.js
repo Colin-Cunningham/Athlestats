@@ -1,63 +1,49 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Nav from "../components/Nav/index";
 import Wrapper from "../components/Wrapper/Index";
 import "./signup.css"
+import API from "../utils/API"
 
-export default class Signup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-      category: "Coach",
-      name: ""
-    };
-  }
-  handleInputChange = (event) => {
-    const { value, name } = event.target;
-    this.setState({
-      [name]: value,
-    });
-  };
+function Signup(){
 
-  onSubmit = (event) => {
-    event.preventDefault();
-    fetch("/api/register", {
-      method: "POST",
-      body: JSON.stringify(this.state),
-      headers: {
-        "Content-Type": "application/json",
-      },
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [category, setCategory] = useState("Coach");
+  const [name, setName] = useState("")
+
+  function register(event) {
+    event.preventDefault()
+    API.signup({
+      email: email,
+      password: password,
+      category: category,
+      name: name
     })
       .then((res) => {
-        if (res.status === 200) {
-          window.location.href = "/login";
-        } else {
-          console.log(res)
-          const error = new Error(res.error);
-          throw error;
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("That Email already exists");
-      });
-  };
+        console.log(res)
+        window.location.href = "/login" 
+      }
+      )
+      .catch((err) => console.log(err));
+  }
 
-  render() {
+
+  
+
+
     return (
       <>
         <Nav />
         <Wrapper>
-          <form className="signup" onSubmit={this.onSubmit}>
+          <form className="signup" onSubmit={register}>
             <h1 className="header">Sign up Below!</h1>
             <input
               className="form-control"
               type="email"
               name="email"
               placeholder="Enter email"
-              value={this.state.email}
-              onChange={this.handleInputChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <input
@@ -65,8 +51,8 @@ export default class Signup extends Component {
               type="password"
               name="password"
               placeholder="Enter password"
-              value={this.state.password}
-              onChange={this.handleInputChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
             <h1 className="header">Tell us a bit about yourself</h1>
@@ -76,8 +62,8 @@ export default class Signup extends Component {
                 type="category"
                 name="category"
                 placeholder="Enter password"
-                value={this.state.category}
-                onChange={this.handleInputChange}
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
                 required
               >
                 <option value="Coach">Coach</option>
@@ -90,8 +76,8 @@ export default class Signup extends Component {
               type="name"
               name="name"
               placeholder="Enter Name"
-              value={this.state.name}
-              onChange={this.handleInputChange}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
             <input id="submit" className="btn btn-center"type="submit" value="Submit" />
@@ -100,4 +86,7 @@ export default class Signup extends Component {
       </>
     );
   }
-}
+
+
+
+  export default Signup
