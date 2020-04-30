@@ -1,10 +1,20 @@
 #signup{
     margin: 0 auto;
     margin-bottom: 4rem;
+
   }
+
   .form-control{
     color: black;
     font-size: larger;
     font-weight: 600;
     transition: none;
+  }
+
+  .header{
+    text-align: center;
+  }
+
+  #submit{
+  margin-left: 13rem;
   }

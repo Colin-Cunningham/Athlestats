@@ -36,7 +36,8 @@
   
   .main {
     margin-left: 40px; /* Same as the width of the sidenav */
-    padding: 1rem
+    padding: 1rem;
+    margin-bottom: 2rem;
   }
 
 

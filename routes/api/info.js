@@ -4,6 +4,7 @@ const User = require("../../controllers/userController")
 
 router.route("/:email")
    .get(User.findByEmail)
+   .put(User.addId)
 
 
    

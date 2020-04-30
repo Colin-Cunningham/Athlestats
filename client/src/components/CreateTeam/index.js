@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./style.css";
 import API from "../../utils/API";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-function CreateTeam() {
+function CreateTeam(props) {
   const [sport, setSport] = useState("");
   const [name, setName] = useState("");
   const [highschool, setHighschool] = useState("");
@@ -23,7 +23,7 @@ function CreateTeam() {
       location: { city: city, state: state },
     })
       .then((res) => {
-        window.location.href = "/dash/create/" + email + "/" + res.data._id 
+        window.location.href = "/dash/" + email + "/" + res.data._id + "/" + props.category + "/create"
       }
       )
       .catch((err) => console.log(err));

@@ -27,6 +27,7 @@ module.exports = {
           });
       } else {
         user.isCorrectPassword(password, function(err, same) {
+          console.log("hit")
           if (err) {
             res.status(500)
               .json({
@@ -43,8 +44,7 @@ module.exports = {
             const token = jwt.sign(payload, secret, {
               expiresIn: '1h'
             });
-            console.log(res)
-            res.cookie('id', token, { httpOnly: false, withCredentials: true })
+            res.cookie('id', token, { httpOnly: false })
               .sendStatus(200);
           }
         });
@@ -60,6 +60,12 @@ module.exports = {
    update: function(req, res) {
     db.User
       .updateOne({ email: req.params.email }, { $set: { teamID: req.params.id} })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  addId: function(req, res) {
+    db.User
+      .updateOne({ email: req.params.email }, { $set: { playerID: req.body} })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

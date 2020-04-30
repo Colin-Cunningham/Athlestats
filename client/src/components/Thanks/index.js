@@ -1,23 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import API from "../../utils/API";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
-function Thank(){
+function Thank(props){
 
     useEffect(() => {
         update();
+        addID()
       }, []);
     
       const {email} = useParams()
       const {id} = useParams()
-
+      const {type} = useParams()
+      
+      
       function update() {
         API.updateUserTeam(email, id)
           .then((res) => {console.log(res)})
           .catch((err) => console.log(err));
       }
-    
+
+     
+
+      function addID(){
+        API.getTeam(id)
+        .then((res) => {add2team(email, res.data.players._id)})
+        .catch((err) => console.log(err));
+    }
+
+
+
+      function add2team(email, number){
+        if(type === "Player" ){
+          API.add2user(email, number )
+          .then((res) => {console.log(res)})
+          .catch((err) => console.log(err));
+        }else{
+          console.log(type)
+        }
+      }
+
 
 
     return(

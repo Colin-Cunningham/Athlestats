@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav/index";
 import Wrapper from "../components/Wrapper/Index";
-import "./style.css"
+import "./signup.css"
 
 export default class Signup extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export default class Signup extends Component {
       email: "",
       password: "",
       category: "Coach",
-      name: "",
+      name: ""
     };
   }
   handleInputChange = (event) => {
@@ -33,6 +33,7 @@ export default class Signup extends Component {
         if (res.status === 200) {
           window.location.href = "/login";
         } else {
+          console.log(res)
           const error = new Error(res.error);
           throw error;
         }
@@ -49,7 +50,7 @@ export default class Signup extends Component {
         <Nav />
         <Wrapper>
           <form className="signup" onSubmit={this.onSubmit}>
-            <h1 className="jumbotron">Sign up Below!</h1>
+            <h1 className="header">Sign up Below!</h1>
             <input
               className="form-control"
               type="email"
@@ -68,10 +69,10 @@ export default class Signup extends Component {
               onChange={this.handleInputChange}
               required
             />
-            <h1 className="jumbotron">Tell us a bit about yourself</h1>
-            <div className="form-control">
+            <h1 className="header">Tell us a bit about yourself</h1>
+            <div>
               <select
-                className="form-control"
+              className="form-control"
                 type="category"
                 name="category"
                 placeholder="Enter password"
@@ -93,7 +94,7 @@ export default class Signup extends Component {
               onChange={this.handleInputChange}
               required
             />
-            <input type="submit" value="Submit" />
+            <input id="submit" className="btn btn-center"type="submit" value="Submit" />
           </form>
         </Wrapper>
       </>

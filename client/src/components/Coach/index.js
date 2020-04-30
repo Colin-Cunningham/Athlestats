@@ -32,7 +32,6 @@ function Coach(){
       </div>
     </div>
     </Wrapper>
-
     </>
     )
 }

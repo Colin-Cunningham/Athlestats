@@ -1,54 +1,25 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import API from "../../utils/API";
-import { Route, Switch, Link } from "react-router-dom";
-import DashHome from "../../components/DashHome/index"
+import { Route, Switch, Link, useParams } from "react-router-dom";
 import CreateTeam from "../../components/CreateTeam/index"
 import Thank from "../../components/Thanks/index"
 import AddPlayer from "../../components/AddPlayers/index"
-
+import Profile from "../../components/Profile/index"
+import Stats from "../../components/Stats/index"
+import Individual from "../../components/Individual/index"
   
 
 
 function DashNav() {
   const [user, setUser] = useState([]);
   
-  const value = getCookie('id');
 
-
-  function getCookie(name) {
-    var value = "; " + document.cookie;
-    console.log(document.cookie)
-    var parts = value.split("; " + name + "=");
-    if (parts.length === 2) return parts.pop().split(";").shift();
-  }
-  
-  
-
-  function parseJwt(token) {
-    var base64Url = token.split(".")[1];
-    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    var jsonPayload = decodeURIComponent(
-      atob(base64)
-        .split("")
-        .map(function (c) {
-          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join("")
-    );
-  
-    return JSON.parse(jsonPayload);
-  }
-  
-  const code = parseJwt(value);
-  
-  console.log(code)
-
-  const  { email }  = code
+  const  { email }  = useParams()
 
   useEffect(() => {
     API.getInfo(email)
-      .then((res) => {setUser(res.data); console.log(res.data)})
+      .then((res) => {setUser(res.data)})
       .catch((err) => console.log(err));
   }, []);
 
@@ -59,28 +30,31 @@ function DashNav() {
         <p></p>
       </div>
       <div className="sidenav">
-        <Link to={"/dash"}><i className="fas fa-home"></i></Link>
-        <Link to={"/dash/home/" + user.teamID}><i className="fas fa-chart-pie"></i></Link>
-        <Link to={"dash/clients"}><i className="fas fa-football-ball"></i></Link>
-        <Link to={"dash/contact"}><i className="fas fa-user-alt"></i></Link>
-        <Link to={"dash/about"}><i className="fas fa-cog"></i></Link>
+        <Link to={"/dash/" + email}><i className="fas fa-home"></i></Link>
+        <Link to={"/dash/" + email + "/" + user.category}><i className="fas fa-plus-square"></i></Link>
+        <Link to={"/dash/" + email + "/stats/" }><i className="fas fa-football-ball"></i></Link>
+        <Link to={"/dash/" + email}><i className="fas fa-user-alt"></i></Link>
+        <Link to={"/dash/" + email}><i className="fas fa-cog"></i></Link>
       </div>
       <div className="main">
           <Switch>
-            <Route exact path={["/dash"]}> 
-              <DashHome name={user.name} category={user.category} email={user.email}  />
+            <Route exact path={["/dash/:email"]}> 
+              <Profile name={user.name} category={user.category} email={user.email} link={user.link} teamID={user.teamID} />
             </Route>
-            <Route exact path={["/dash/coach/:email"]}> 
+            <Route exact path={["/dash/:email/coach"]}> 
               <CreateTeam name={user.name} category={user.category} email={user.email}  />
             </Route>
-            <Route exact path={["/dash/player/:email"]}> 
+            <Route exact path={["/dash/:email/player"]}> 
               <AddPlayer name={user.name} category={user.category} email={user.email}  />
             </Route>
-            <Route exact path={["/dash/:email/:id"]}> 
-              <Thank />
+            <Route exact path={["/dash/:email/:id/:type/create/"]}> 
+              <Thank name={user.name} category={user.category} email={user.email}/>
             </Route>
-            <Route exact path={["/dash", "/dash/home/:teamID"]}>
-            <DashHome name={user.name} category={user.category} email={user.email}  />
+            <Route exact path ={["/dash/:email/stats"]}>
+                <Stats name={user.name} category={user.category} email={user.email} link={user.link} teamID={user.teamID} /> 
+            </Route>
+            <Route exact path ={["/dash/:email/stats/:playerID"]}>
+                <Individual name={user.name} category={user.category} email={user.email} link={user.link} teamID={user.teamID} /> 
             </Route>
           </Switch>
       </div>

@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Index"
 function App() {
   return (
     <Router>
-      <div>
+      <>
         <Switch>
           <Route exact path={["/", "/home"]}>
             <Buttons />
@@ -35,11 +35,11 @@ function App() {
           <Route exact path={["/signup"]}>
             <Signup />
           </Route>
-          <Route path={["/dash"]}>
+          <Route path={["/dash/:email"]}>
             <Dashnav />
           </Route>
         </Switch>
-      </div>
+      </>
     </Router>
   );
 }
