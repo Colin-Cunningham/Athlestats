@@ -29,9 +29,11 @@ function Buttons() {
           Recruiter
         </button>
       </Link>
-      <a type="a" href="/login" value="Log in" className="login">
+      <Link to="/login">
+        <a value="Log in" className="login">
         Already a member? Log in here!
       </a>
+      </Link>
     </div>
     </Wrapper>
     </>
