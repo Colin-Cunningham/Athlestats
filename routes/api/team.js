@@ -6,6 +6,8 @@ const User = require("../../controllers/userController")
 
 router.route("/")
    .post(Team.create)
+   .put(Team.createPlayer)
+   .get(Team.findPlayer)
 
    
 router.route("/:id")

@@ -10,4 +10,5 @@ router.use("/authenticate", login)
 router.use("/information", info)
 router.use("/team", team)
 
+
 module.exports = router;
