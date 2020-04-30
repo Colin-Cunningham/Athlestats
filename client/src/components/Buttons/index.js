@@ -30,9 +30,9 @@ function Buttons() {
         </button>
       </Link>
       <Link to="/login">
-        <a value="Log in" className="login">
+        <p value="Log in" className="login">
         Already a member? Log in here!
-      </a>
+      </p>
       </Link>
     </div>
     </Wrapper>
