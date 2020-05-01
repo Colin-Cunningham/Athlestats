@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Nav from "../components/Nav/index"
 import Wrapper from "../components/Wrapper/Index"
 import "./login.css"
@@ -19,13 +20,14 @@ function Login(){
     })
       .then((res) => {
         console.log(res)
-        window.location.href = "/dash/" + email 
+        history.push("/dash/" + email ) 
       }
       )
       .catch((err) => console.log(err));
   }
 
 
+  const history = useHistory()
 
 
     return (

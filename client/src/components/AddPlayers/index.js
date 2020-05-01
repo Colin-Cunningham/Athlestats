@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Redirect, useHistory  } from "react";
 import "./style.css";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";
@@ -33,11 +33,13 @@ function AddPlayers(props) {
       stats: [],
     })
       .then((res) => {
-        window.location.href =
-          "/dash/" + email + "/" + teamID + "/" + props.category + "/create"
+        history.push("/dash/" + email + "/" + teamID + "/" + props.category + "/create")
       })
       .catch((err) => alert("Number already taken"));
   }
+
+  let history = useHistory();
+
 
   return (
     <form id="teamForm">

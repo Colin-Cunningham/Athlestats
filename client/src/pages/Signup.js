@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {  useHistory } from "react-router-dom";
 import Nav from "../components/Nav/index";
 import Wrapper from "../components/Wrapper/Index";
 import "./signup.css"
@@ -21,14 +22,14 @@ function Signup(){
     })
       .then((res) => {
         console.log(res)
-        window.location.href = "/login" 
+        history.push("/login")
       }
       )
       .catch((err) => console.log(err));
   }
 
 
-  
+  const history = useHistory()
 
 
     return (

@@ -22,10 +22,13 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findPlayer: function (req, res) {
-    db.Team.findById({ _id: req.body.id }, function (err, players) {
-      Team.players.id(req.body.playerID);
+    console.log(req.body)
+    db.Team
+    .findOne({ '_id': req.body.teamID }).
+    where('players._id').equals(req.body.playerID)
+    .then((dbModel) => {
+      res.json(dbModel);
     })
-      .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).json(err));
-  },
-};
+    .catch((err) => res.status(422).json(err));
+}
+}
