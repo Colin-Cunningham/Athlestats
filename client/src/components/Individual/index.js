@@ -8,8 +8,17 @@ function Stats(props) {
   const [stats, setStats] = useState([]);
 
   useEffect(() => {
-    // getStats();
+     getPlayer();
   });
+
+  function getPlayer(){
+    API.seePlayer(teamID, statsID)
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => alert(err));
+  }
+
 
   const teamID = props.teamID;
   const {statsID} = useParams()

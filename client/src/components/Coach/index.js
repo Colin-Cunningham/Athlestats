@@ -48,7 +48,7 @@ function Coach() {
               </p>
             </div>
             <Link to="/signup">
-              <p value="Log in" className="login">
+              <p className="login">
                 Sound good for you? Register for free here!
               </p>
             </Link>

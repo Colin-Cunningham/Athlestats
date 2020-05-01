@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import API from "../../utils/API";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 function CreateTeam(props) {
   const [sport, setSport] = useState("");
@@ -23,13 +23,14 @@ function CreateTeam(props) {
       location: { city: city, state: state },
     })
       .then((res) => {
-        window.location.href = "/dash/" + email + "/" + res.data._id + "/" + props.category + "/create"
+        
+       history.push("/dash/" + email + "/" + res.data._id + "/" + props.category + "/create") 
       }
       )
       .catch((err) => console.log(err));
   }
 
-
+  const history = useHistory()
 
   return (
     <form id="teamForm">
