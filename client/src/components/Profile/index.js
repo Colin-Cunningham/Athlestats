@@ -37,7 +37,7 @@ function Profile(props) {
             {team.highschool} {team.name}
           </h4>
           <h5>Location:</h5>
-          <h3>Get your players to connect using your teamID!</h3>
+          <h4>Get your players to connect using your teamID!</h4>
           <h4>{team._id}</h4>
         </div>
 
