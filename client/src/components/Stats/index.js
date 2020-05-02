@@ -49,6 +49,7 @@ function Stats(props) {
                 <th scope="col">Defense</th>
               </tr>
             </thead>
+            {player.length ? (  
             <tbody>
               {player.map((player) => (
                 <tr>
@@ -65,6 +66,7 @@ function Stats(props) {
                 </tr>
               ))}
             </tbody>
+            ): (<h3>You have to add a team! Hit the plus button</h3>)}
           </table>
         </div>
       </div>
