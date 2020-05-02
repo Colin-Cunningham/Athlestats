@@ -1,8 +1,9 @@
 .login{
     text-align: center;
+    height: 100%;
 }
 
 .form-group{
     background-color: none;
-    height: fit-content;
+    height: 100%;
 }

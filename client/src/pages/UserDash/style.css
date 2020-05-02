@@ -45,3 +45,24 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+
+
+
+
+@media only screen and (min-width: 420px) {
+  #holder{
+    height: 6rem;
+    background-image: url("./dash.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 66%;
+    margin: 0 auto;
+   background-position: center;
+   background-color: #747474 ;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+
+}

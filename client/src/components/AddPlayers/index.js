@@ -1,4 +1,4 @@
-import React, { useState, Redirect, useHistory  } from "react";
+import React, { useState, useHistory  } from "react";
 import "./style.css";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";

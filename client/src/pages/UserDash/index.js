@@ -34,7 +34,6 @@ function DashNav() {
         <Link to={"/dash/" + email + "/" + user.category}><i className="fas fa-plus-square"></i></Link>
         <Link to={"/dash/" + email + "/stats/" }><i className="fas fa-football-ball"></i></Link>
         <Link to={"/dash/" + email}><i className="fas fa-user-alt"></i></Link>
-        <Link to={"/dash/" + email}><i className="fas fa-cog"></i></Link>
       </div>
       <div className="main">
           <Switch>

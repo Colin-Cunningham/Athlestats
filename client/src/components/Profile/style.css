@@ -45,3 +45,28 @@ h3 {
   transform: skew(-5deg);
   margin-bottom: 2rem;
 }
+
+#about{
+  margin-top: 4rem;
+  border-style: groove;
+  border-width: 2px;
+}
+
+
+#head{
+  font-size: 2rem;
+  text-align: left;
+}
+
+@media only screen and (min-width: 420px) {
+  #container{
+    border-style: groove;
+    border-width: 1px;
+    width: 66%;
+    margin: 0 auto;
+    padding: 8rem;
+    padding-top: 2rem
+    
+}
+
+}

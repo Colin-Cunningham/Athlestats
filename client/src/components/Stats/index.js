@@ -23,8 +23,8 @@ function Stats(props) {
 
   return (
     <>
-      <h4 className="welcome">Welcome back {props.category}</h4>
       <div id="container">
+      <h4 className="welcome">Welcome back {props.category}</h4>
         <img
           className="ui centered circular image"
           id="profile"
@@ -35,7 +35,7 @@ function Stats(props) {
         <h3 id="name">{props.name}</h3>
 
         <div className="do">
-          <h4>Your teams Stats</h4>
+          <h4>Your Roster</h4>
           <h5>Location:</h5>
         </div>
 

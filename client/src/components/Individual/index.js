@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 import API from "../../utils/API";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Stats(props) {
   const [stats, setStats] = useState([]);
@@ -12,7 +12,7 @@ function Stats(props) {
   });
 
   function getPlayer(){
-    API.seePlayer(teamID, statsID)
+    API.seePlayer(teamID, playerID)
     .then((res) => {
       console.log(res)
     })
@@ -21,7 +21,7 @@ function Stats(props) {
 
 
   const teamID = props.teamID;
-  const {statsID} = useParams()
+  const { playerID } = useParams()
 
  
   return (

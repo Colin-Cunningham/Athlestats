@@ -11,6 +11,7 @@ function Signup(){
   const [password, setPassword] = useState("");
   const [category, setCategory] = useState("Coach");
   const [name, setName] = useState("")
+  const [link, setLink] = useState("")
 
   function register(event) {
     event.preventDefault()
@@ -18,7 +19,8 @@ function Signup(){
       email: email,
       password: password,
       category: category,
-      name: name
+      name: name,
+      link: link
     })
       .then((res) => {
         console.log(res)
@@ -79,6 +81,13 @@ function Signup(){
               placeholder="Enter Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
+            />
+             <input
+              className="form-control"
+              placeholder="Enter Url to picture"
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
               required
             />
             <input id="submit" className="btn btn-center"type="submit" value="Submit" />

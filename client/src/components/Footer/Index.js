@@ -1,14 +1,20 @@
 import React from "react";
 import "./style.css";
-import image from "./iconsmall.png";
+
+
 
 function Footer() {
   return (
-
-          <div className="copyright">
-            <p>Copyright 2020 - AthleStat</p>
-          </div>
-      
+    <div className="foot">
+      <div className="about">
+        <div className="list">
+         
+        </div>
+      </div>
+      <div className="copyright">
+        <p>Copyright 2020 - AthleStat</p>
+      </div>
+    </div>
   );
 }
 

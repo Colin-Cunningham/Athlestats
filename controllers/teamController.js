@@ -24,8 +24,8 @@ module.exports = {
   findPlayer: function (req, res) {
     console.log(req.body)
     db.Team
-    .findOne({ '_id': req.body.teamID }).
-    where('players._id').equals(req.body.playerID)
+    .findOne({_id: req.body.teamID }).
+     where(players._id).equals(req.body.playerID)
     .then((dbModel) => {
       res.json(dbModel);
     })

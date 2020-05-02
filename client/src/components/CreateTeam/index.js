@@ -20,7 +20,8 @@ function CreateTeam(props) {
       sport: sport,
       name: name,
       highschool: highschool,
-      location: { city: city, state: state },
+      city: city, 
+      state: state,
     })
       .then((res) => {
         

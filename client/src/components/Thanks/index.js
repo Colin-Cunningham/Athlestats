@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";
 
@@ -44,7 +44,7 @@ function Thank(props){
 
 
     return(
-        <div>You have succsefully created your team! Click the football icon to see it!</div>
+        <div className="jumbotron">You have succsefully created your team! Click the football icon to see it!</div>
     )
 }
 

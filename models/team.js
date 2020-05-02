@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 
 
-const StatsSchema = new mongoose.Schema({
-  firstName: { type: String, required: true},
-  lastName: { type: String, required: true },
-  teamID:{type: String, required: true},
-  email: {type: String, required: true},
-  cellPhone: {type: Number, required: true},
-  position: {type: String},
-  number:{type: Number},
-  highlightTape:{type: String},
-  stats:[]
-});
+// const StatsSchema = new mongoose.Schema({
+//   firstName: { type: String, required: true},
+//   lastName: { type: String, required: true },
+//   teamID:{type: String, required: true},
+//   email: {type: String, required: true},
+//   cellPhone: {type: Number, required: true},
+//   position: {type: String},
+//   number:{type: Number},
+//   highlightTape:{type: String},
+//   stats:[]
+// });
 
 
 const PlayerSchema = new mongoose.Schema({
@@ -24,7 +24,7 @@ const PlayerSchema = new mongoose.Schema({
   dPosition: {type: String},
   number:{type: Number, unique: true},
   highlightTape:{type: String},
-  stats:[StatsSchema]
+  stats:[]
 });
 
 const TeamSchema = new mongoose.Schema({
@@ -32,7 +32,8 @@ const TeamSchema = new mongoose.Schema({
     name: { type: String, required: true },
     highschool:{type: String, required: true},
     logo: {type: String},
-    location:[{city: String, state: String}],
+    city: {type: String},
+    state: {type: String},
     players:[PlayerSchema]
   });
   

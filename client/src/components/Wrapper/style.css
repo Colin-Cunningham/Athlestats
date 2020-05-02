@@ -1,5 +1,5 @@
 .wrapper{
-    min-height: 100%;
+    min-height: auto;
     height: fit-content;
     background-color: #f8c057;
     padding-top: 3.5rem;
@@ -12,6 +12,6 @@
     .wrapper{
       padding-left: 20rem;
       padding-right: 20rem ;
-      
+  
     }
   }
