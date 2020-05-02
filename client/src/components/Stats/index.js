@@ -24,7 +24,7 @@ function Stats(props) {
   return (
     <>
       <div id="container">
-      <h4 className="welcome">Welcome back {props.category}</h4>
+        <h4 className="welcome">Welcome back {props.category}</h4>
         <img
           className="ui centered circular image"
           id="profile"
@@ -49,7 +49,7 @@ function Stats(props) {
                 <th scope="col">Defense</th>
               </tr>
             </thead>
-            {player.length ? (  
+
             <tbody>
               {player.map((player) => (
                 <tr>
@@ -66,7 +66,6 @@ function Stats(props) {
                 </tr>
               ))}
             </tbody>
-            ): (<h3>You have to add a team! Hit the plus button</h3>)}
           </table>
         </div>
       </div>

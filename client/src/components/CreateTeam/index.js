@@ -15,7 +15,6 @@ function CreateTeam(props) {
 
   function createTeam(event) {
     event.preventDefault()
-    console.log(email)
     API.createTeam({
       sport: sport,
       name: name,
@@ -24,7 +23,6 @@ function CreateTeam(props) {
       state: state,
     })
       .then((res) => {
-        
        history.push("/dash/" + email + "/" + res.data._id + "/" + props.category + "/create") 
       }
       )
