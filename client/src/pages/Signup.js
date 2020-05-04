@@ -12,6 +12,8 @@ function Signup(){
   const [category, setCategory] = useState("Coach");
   const [name, setName] = useState("")
   const [link, setLink] = useState("")
+  const [teamID, setTeamID] = useState("")
+  const [motto, setMotto] = useState("")
 
   function register(event) {
     event.preventDefault()
@@ -20,7 +22,9 @@ function Signup(){
       password: password,
       category: category,
       name: name,
-      link: link
+      link: link,
+      teamID: teamID,
+      motto: motto
     })
       .then((res) => {
         console.log(res)
@@ -39,7 +43,7 @@ function Signup(){
         <Nav />
         <Wrapper>
           <form className="signup" onSubmit={register}>
-            <h1 className="header">Sign up Below!</h1>
+            <p id="label">Email</p>
             <input
               className="form-control"
               type="email"
@@ -49,6 +53,7 @@ function Signup(){
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+            <p id="label">Password</p>
             <input
               className="form-control"
               type="password"
@@ -58,7 +63,7 @@ function Signup(){
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <h1 className="header">Tell us a bit about yourself</h1>
+             <p id="label">Category</p>
             <div>
               <select
               className="form-control"
@@ -74,20 +79,39 @@ function Signup(){
                 <option value="Recruiter">Recruiter</option>
               </select>
             </div>
+            <p id="label">Full Name</p>
             <input
               className="form-control"
               type="name"
               name="name"
-              placeholder="Enter Name"
+              placeholder="Joe Smith"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
+            <p id="label">Link a Profile Picture (optional)</p>
              <input
               className="form-control"
               placeholder="Enter Url to picture"
               value={link}
               onChange={(e) => setLink(e.target.value)}
+              required
+            />
+            <p id="label">Team Motto</p>
+             <input
+              className="form-control"
+              placeholder="Ex: Leave no Doubts"
+              value={motto}
+              onChange={(e) => setMotto(e.target.value)}
+              required
+            />
+            <p id="label">Create Your Unique Team Code</p>
+            <p>Share this with staff and players to have them join!</p>
+             <input
+              className="form-control"
+              placeholder="1234"
+              value={teamID}
+              onChange={(e) => setTeamID(e.target.value)}
               required
             />
             <input id="submit" className="btn btn-center"type="submit" value="Submit" />

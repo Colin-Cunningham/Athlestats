@@ -12,5 +12,15 @@
 
  #direct{
      padding-top: 2rem;
-     
+ }
+
+
+ #logo{
+     background-color: #f8c057;
+     color: #747474;;
+     text-align: center;
+     font-size: 3rem;
+     font-family: 'Alfa Slab One', cursive;
+     font-variant: small-caps;
+     font-style: oblique;
  }

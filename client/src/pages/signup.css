@@ -1,7 +1,6 @@
 #signup{
     margin: 0 auto;
     margin-bottom: 4rem;
-
   }
 
   .form-control{
@@ -18,3 +17,17 @@
   #submit{
   margin-left: 13rem;
   }
+
+  #label{
+    margin-bottom: .3rem;
+    margin: 0 auto;
+    width: 55%;
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+
+p{
+  text-align: center;
+}

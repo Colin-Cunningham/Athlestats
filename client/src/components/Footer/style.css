@@ -1,10 +1,12 @@
 
   .copyright{
-    background-color: #404da3f3;
+    background-color: #404da3;
     text-align: center;
     color: white;
     width: 100%;
-    height: 3rem;
+    height: 2.4rem;
+    padding-top: 2%;
+    font-family: cursive;
   }
 
   .foot{
@@ -14,23 +16,4 @@
     width: 100%;
 
     height: fit-content;
-  }
-
-  .list{
-    width: fit-content;
-    margin: 0 auto;
-  }
-
-  .list1{
-    list-style-type: none;
-  }
-
-  .about{
-    text-align: center;
-
-    height: 8rem;
-    background-image: url("./iconsmall.png");
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-color: #f8c057;
   }

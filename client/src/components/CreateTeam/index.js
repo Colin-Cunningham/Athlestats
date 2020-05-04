@@ -12,6 +12,7 @@ function CreateTeam(props) {
 
 
   const {email} = useParams()
+  const teamID = props.teamID
 
   function createTeam(event) {
     event.preventDefault()
@@ -21,9 +22,10 @@ function CreateTeam(props) {
       highschool: highschool,
       city: city, 
       state: state,
+      teamID: teamID
     })
       .then((res) => {
-       history.push("/dash/" + email + "/" + res.data._id + "/" + props.category + "/create") 
+       history.push("/dash/" + email + "/" ) 
       }
       )
       .catch((err) => console.log(err));
@@ -34,7 +36,6 @@ function CreateTeam(props) {
   return (
     <form id="teamForm">
       <h3>Creating your team</h3>
-      <p>Dont worry you'll get to input your roster soon</p>
       <div className="form-group">
         <p className="inputName">Sport</p>
         <input
@@ -80,14 +81,7 @@ function CreateTeam(props) {
               value={state}
             />
           </div>
-        </div>
-        <p className="inputName">Upload Logo ("Optional")</p>
-        <input
-          type="file"
-          className="form-control"
-          id="exampleFormControlFile1"
-        />
-        
+        </div>        
           <button onClick={createTeam}>Submit</button>
       
       </div>

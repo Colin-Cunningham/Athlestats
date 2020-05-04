@@ -34,6 +34,7 @@ const TeamSchema = new mongoose.Schema({
     logo: {type: String},
     city: {type: String},
     state: {type: String},
+    teamID: {type: String},
     players:[PlayerSchema]
   });
   

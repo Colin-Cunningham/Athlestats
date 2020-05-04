@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import API from "../../utils/API";
+import {Link} from "react-router-dom"
+
 
 function Profile(props) {
-  const [team, setTeam] = useState([]);
+ 
 
-  useEffect(() => {
-    getTeam();
-  });
 
-  const teamID = props.teamID;
-
-  function getTeam() {
-    API.getTeam(teamID)
-      .then((res) => {
-        setTeam(res.data);
-      })
-      .catch((err) => console.log(err));
-  }
 
   return (
     <>
@@ -32,23 +22,20 @@ function Profile(props) {
         <button>Edit</button>
         <h3 id="name">{props.name}</h3>
 
+        <div className="don">
+          <h4> "{props.motto}"</h4>
+        </div>
+
         <div className="do">
-          <h4>
-            {team.highschool} {team.name}
-          </h4>
-          <p>{team.city}, {team.state}</p>
-          <h4>Get your players to connect using your teamID!</h4>
-          <h5>{team._id}</h5>
+          <h4>TeamID: {props.teamID}</h4>
         </div>
 
         <div id="about">
-          <h4 id="head">Athlestat News</h4>
+          <h4 id="head">Highschool Football News</h4>
           <ul className="list-group">
-            <li className="list-group-item">Cras justo odio</li>
-            <li className="list-group-item">Dapibus ac facilisis in</li>
-            <li className="list-group-item">Morbi leo risus</li>
-            <li className="list-group-item">Porta ac consectetur ac</li>
-            <li className="list-group-item">Vestibulum at eros</li>
+           <a target= "_blank"href="https://sanangelolive.com/news/sports/2020-05-02/will-there-be-2020-high-school-football-season" className="list-group-item">Will there be a 2020 Highschool Season?</a>
+           <a target= "_blank"href="https://usatodayhss.com/2020/the-best-teams-in-high-school-sports-history" className="list-group-item">Best Teams in Higshchool sports History</a>
+           <a target= "_blank"href="https://www.palmbeachpost.com/sports/20200403/coronavirus-florida-what-will-high-school-football-look-like-going-forward" className="list-group-item">What will Higshchool Football look like going forward?</a>
           </ul>
         </div>
       </div>

@@ -28,12 +28,14 @@ function App() {
           </Route>
           <Route exact path={["/recruiter"]}>
             <Recruiter />
+            <Footer />
           </Route>
           <Route exact path={["/login"]}>
             <Login />
           </Route>
           <Route exact path={["/signup"]}>
             <Signup />
+            <Footer />
           </Route>
           <Route path={["/dash/:email"]}>
             <Dashnav />

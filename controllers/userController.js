@@ -27,7 +27,6 @@ module.exports = {
           });
       } else {
         user.isCorrectPassword(password, function(err, same) {
-          console.log("hit")
           if (err) {
             res.status(500)
               .json({
@@ -56,17 +55,5 @@ module.exports = {
       .findOne({ email: req.params.email })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-   },
-   update: function(req, res) {
-    db.User
-      .updateOne({ email: req.params.email }, { $set: { teamID: req.params.id} })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  addId: function(req, res) {
-    db.User
-      .updateOne({ email: req.params.email }, { $set: { playerID: req.body} })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+   }
 };

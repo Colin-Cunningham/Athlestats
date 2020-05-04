@@ -6,13 +6,8 @@ import "./style.css";
 function Footer() {
   return (
     <div className="foot">
-      <div className="about">
-        <div className="list">
-         
-        </div>
-      </div>
       <div className="copyright">
-        <p>Copyright 2020 - AthleStat</p>
+        <p>{String.fromCharCode(169) + " 2020 - AthleStat"}</p>
       </div>
     </div>
   );
