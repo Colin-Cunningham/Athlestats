@@ -1,14 +1,15 @@
 import React from "react";
 import "./style.css";
-import image from "./iconsmall.png";
+
+
 
 function Footer() {
   return (
-
-          <div className="copyright">
-            <p>Copyright 2020 - AthleStat</p>
-          </div>
-      
+    <div className="foot">
+      <div className="copyright">
+        <p>{String.fromCharCode(169) + " 2020 - AthleStat"}</p>
+      </div>
+    </div>
   );
 }
 

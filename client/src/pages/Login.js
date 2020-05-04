@@ -19,11 +19,10 @@ function Login(){
       password: password
     })
       .then((res) => {
-        console.log(res)
         history.push("/dash/" + email ) 
       }
       )
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err));
   }
 
 
@@ -34,8 +33,8 @@ function Login(){
       <>
       <Nav />
       <Wrapper>
+      <h5 id="h5">Login</h5>
       <form className="login">
-        <h1>Login Below!</h1>
         <input
           className="form-control"
           type="email"

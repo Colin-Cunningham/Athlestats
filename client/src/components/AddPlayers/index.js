@@ -1,4 +1,4 @@
-import React, { useState, Redirect, useHistory  } from "react";
+import React, { useState, useHistory  } from "react";
 import "./style.css";
 import API from "../../utils/API";
 import { useParams } from "react-router-dom";
@@ -19,7 +19,6 @@ function AddPlayers(props) {
 
   function AddPlayer(event) {
     event.preventDefault();
-    console.log(email);
     API.addPlayer({
       firstName: first,
       lastName: last,
@@ -33,7 +32,7 @@ function AddPlayers(props) {
       stats: [],
     })
       .then((res) => {
-        history.push("/dash/" + email + "/" + teamID + "/" + props.category + "/create")
+        history.push("/dash/" + email)
       })
       .catch((err) => alert("Number already taken"));
   }

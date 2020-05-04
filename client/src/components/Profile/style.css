@@ -1,14 +1,27 @@
 *{
-    font-family: 'Oswald', sans-serif;
+    font-family:  'Spectral SC', serif;
   }
 
 
 .do h4{
     margin-top: 3rem;
-    font-family: 'Girassol', cursive;
-    font-size: xx-large;
+    font-family:  'Spectral SC', serif;
+    font-size: x-large;
+    border-style: outset;
+    border-width: 2px;
 }
 
+.don{
+  margin-top: 2rem;
+  width: 100%;
+  font-size: 2.8rem;
+}
+
+.don h4{
+  font-size: 2rem;
+  font-family: 'Spectral SC', serif;
+  font-style: oblique;
+}
 #name{
   margin: 0 auto;
   background-color: black;
@@ -44,4 +57,33 @@ h3 {
   color: white;
   transform: skew(-5deg);
   margin-bottom: 2rem;
+}
+
+#about{
+  margin-top: 4rem;
+  font-weight: 800;
+  color: white;
+  background-color:#747474;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+}
+
+
+#head{
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Spectral SC', serif; ;
+}
+
+@media only screen and (min-width: 420px) {
+  #container{
+    border-style: groove;
+    border-width: 1px;
+    width: 66%;
+    margin: 0 auto;
+    padding: 8rem;
+    padding-top: 2rem
+    
+}
+
 }

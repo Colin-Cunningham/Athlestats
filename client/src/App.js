@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Player from "./components/Player/index";
 import Buttons from "./components/Buttons/index";
 import Recruiter from "./components/Recruiter/index";
@@ -28,12 +28,14 @@ function App() {
           </Route>
           <Route exact path={["/recruiter"]}>
             <Recruiter />
+            <Footer />
           </Route>
           <Route exact path={["/login"]}>
             <Login />
           </Route>
           <Route exact path={["/signup"]}>
             <Signup />
+            <Footer />
           </Route>
           <Route path={["/dash/:email"]}>
             <Dashnav />

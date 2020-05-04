@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 
 function Stats(props) {
   const [player, setPlayer] = useState([]);
+  const [team, setTeam] = useState([]);
 
   useEffect(() => {
     getPlayers();
@@ -16,6 +17,7 @@ function Stats(props) {
   function getPlayers() {
     API.getTeam(teamID)
       .then((res) => {
+        setTeam(res.data);
         setPlayer(res.data.players);
       })
       .catch((err) => console.log(err));
@@ -23,19 +25,15 @@ function Stats(props) {
 
   return (
     <>
-      <h4 className="welcome">Welcome back {props.category}</h4>
       <div id="container">
-        <img
-          className="ui centered circular image"
-          id="profile"
-          src={props.link ? props.link : "https://via.placeholder.com/150"}
-          alt="..."
-        />
-        <button>Edit</button>
-        <h3 id="name">{props.name}</h3>
+       
+      <div id="teamInfo">
+       <h3>{team.highschool} {team.name}</h3>
+      <h4 > {team.city},{team.state}</h4>
+      </div>
 
         <div className="do">
-          <h4>Your teams Stats</h4>
+          <h4>Your Roster</h4>
           <h5>Location:</h5>
         </div>
 
@@ -49,6 +47,7 @@ function Stats(props) {
                 <th scope="col">Defense</th>
               </tr>
             </thead>
+
             <tbody>
               {player.map((player) => (
                 <tr>

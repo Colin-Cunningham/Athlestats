@@ -1,4 +1,29 @@
 .container-fluid{
     height: fit-content;
     padding-bottom: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+
+.justify{
+    text-align: left;
+    font-family: 'Spectral SC', serif;
+    color: #2c2c2c;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+
+#tag{
+    font-size: 26px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#login{
+    padding-top: 2rem;
+    font-size: 1.2rem;
+    text-decoration: underline;
+
 }

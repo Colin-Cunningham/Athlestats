@@ -9,7 +9,7 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    db.Team.findById(req.params.id)
+    db.Team.findOne({ teamID: req.params.id })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
@@ -24,8 +24,8 @@ module.exports = {
   findPlayer: function (req, res) {
     console.log(req.body)
     db.Team
-    .findOne({ '_id': req.body.teamID }).
-    where('players._id').equals(req.body.playerID)
+    .findOne({_id: req.body.teamID }).
+     where(players._id).equals(req.body.playerID)
     .then((dbModel) => {
       res.json(dbModel);
     })

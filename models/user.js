@@ -8,7 +8,8 @@ const UserSchema = new mongoose.Schema({
   category: { type: String, required: true },
   name: { type: String, required: true },
   link: {type: String, required: false},
-  teamID: { type: String, required: false },
+  motto: {type: String, required: false},
+  teamID: { type: String, required: true, unique: true },
   playerID: { type: String, required: false }
 });
 

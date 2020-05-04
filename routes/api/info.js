@@ -4,12 +4,7 @@ const User = require("../../controllers/userController")
 
 router.route("/:email")
    .get(User.findByEmail)
-   .put(User.addId)
 
-
-   
-router.route("/:email/:id")
-   .put(User.update)
    
 
 module.exports = router
