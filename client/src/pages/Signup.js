@@ -15,6 +15,29 @@ function Signup(){
   const [teamID, setTeamID] = useState("")
   const [motto, setMotto] = useState("")
 
+
+  function UserGreeting(props) {
+    if(category === "Coach"){
+      return <> 
+      <p id="label">Create Your Unique Team Code</p>
+      <p>Share this with staff and players to have them join!</p>
+       <input
+        className="form-control"
+        placeholder="1234"
+        value={teamID}
+        onChange={(e) => setTeamID(e.target.value)}
+        required
+      />
+      </>
+    }else{
+      return <h1></h1>
+    }
+  }
+  
+
+
+
+
   function register(event) {
     event.preventDefault()
     API.signup({
@@ -105,15 +128,7 @@ function Signup(){
               onChange={(e) => setMotto(e.target.value)}
               required
             />
-            <p id="label">Create Your Unique Team Code</p>
-            <p>Share this with staff and players to have them join!</p>
-             <input
-              className="form-control"
-              placeholder="1234"
-              value={teamID}
-              onChange={(e) => setTeamID(e.target.value)}
-              required
-            />
+           <UserGreeting />
             <input id="submit" className="btn btn-center"type="submit" value="Submit" />
           </form>
         </Wrapper>
