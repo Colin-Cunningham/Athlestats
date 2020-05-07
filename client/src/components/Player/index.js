@@ -11,39 +11,19 @@ function Player() {
       <div className="container-fluid">
         <div className="bd-highlight">
           <div id="info1" className="p-2 bd-highlight cont">
-            <i className="fas fa-dumbbell fa-3x"></i><h4 id="tag">Build Your Roster!</h4>
+            <i className="fas fa-dumbbell fa-3x"></i><h4 id="tag">Check Your Roster!</h4>
             <br />
             <p className="justify">
               Stay up to date on your latest stats, coordinate with your coach
-              to see where you can improve your game! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Dolore id dolor quibusdam
-              quaerat, tempora commodi. Culpa, sunt incidunt porro placeat
-              obcaecati ex quasi, rem ut aliquid error, officia cumque
-              blanditiis.
+              to see where you can improve your game! Link up with your team, just enter your team code and start
+              keeping track of your stats! 
             </p>
           </div>
           <div className="p-2 bd-highlight cont">
-            <i className="fas fa-link fa-3x"></i><h4 id="tag">Input Your Stats</h4>
+            <i className="fas fa-link fa-3x"></i><h4 id="tag">See Your Stats</h4>
             <br />
             <p className="justify">
-              Link up with your team, just enter your team code and start
-              keeping track of your stats! Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit. Dolorum, quod fuga soluta enim
-              facilis neque doloribus cupiditate porro aspernatur perferendis
-              unde nihil eveniet nemo sapiente iusto dolorem obcaecati
-              mollitia? Quod?
-            </p>
-          </div>
-          <div className="p-2 bd-highlight cont">
-            <i className="fas fa-hands-helping fa-3x"></i> <h4 id="tag">Start Connecting!</h4>
-            <br />
-            <p className="justify">
-              A MAJOR goal of AthleStat is to connect you with Coachs in safe,
-              productive ways. All Coachs are verified, and you will send you
-              an email if interested. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Aliquid ducimus, iusto tempora unde, labore
-              hic velit perferendis quod veritatis eum assumenda est molestias
-              voluptatibus neque modi architecto maxime deserunt autem.
+            A centralized location to view your team, check your depth chart, check your stats and the stats of others. Athlestats is where the athletes go for all of their athletic needs. Reach out to recruiters, communicate with coaches and players and check your stats and see where you stack up!
             </p>
           </div>
           <Link to="/signup">

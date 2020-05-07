@@ -15,7 +15,8 @@ function Recruiter() {
             <i className="fas fa-hands-helping fa-3x"></i> <h4 id="tag">Start Connecting!</h4>
             <br />
             <p className="justify">
-             Connect with Coaches and Students alike. Build Recruitment boards, email students and watch highlight tapes all within the app. Arrange vists, track engagment all within the app. See live statistical updates on players as they progress throughout the season.
+            Regardless of how you hear about a player Atlestat is the premiere way to locate, track, scout and recruit players across the nation. A centralized location for scouts and recruiting featuring player names, positions, schools and stats and videos (coming soon). Real time updates and direct communication with players and coaches which can lead you to the next program changing student athlete.
+
             </p>
           </div>
           <Link to="/signup">
