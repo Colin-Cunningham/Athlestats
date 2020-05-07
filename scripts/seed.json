@@ -1,35 +1,4 @@
-const mongoose = require("mongoose");
-const db = require("../models");
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/myDatabase");
-
-// const UserSeed = [
-//   {
-//     "email": "colin.199643@gmail.com",
-//     password: "cool",
-//     category: "Coach",
-//     name: "Colin Cunningham",
-//     link: "http://localhost:3000/dash/colin.199643@gmail.com",
-//     "teamID": "demoday",
-//     motto: "If you ain't first You're last"
-//   },
-// ];
-
-// db.User
-// .remove({})
-// .then(() => db.User.collection 
-// .insertMany(UserSeed)
-//   .then((data) => {
-//     console.log(data.result.n + " records inserted!");
-//     process.exit(0);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//     process.exit(1);
-//   })
-  
-const playerSeed = [
-  {
+[{
     "firstName": "Troy",
     "lastName": "Jamieson",
     "teamID": "demoday",
@@ -37,7 +6,7 @@ const playerSeed = [
     "cellphone": "(184) 9818462",
     "oPosition": "WR",
     "dPosition": "DE",
-    "number": "1,"
+    "number": "1"
   },
   {
     "firstName": "Tobie",
@@ -47,7 +16,7 @@ const playerSeed = [
     "cellphone": "(903) 3209396",
     "oPosition": "FB",
     "dPosition": "CB",
-    "number": "2,"
+    "number": "2"
   },
   {
     "firstName": "Randie",
@@ -57,7 +26,7 @@ const playerSeed = [
     "cellphone": "(864) 4172046",
     "oPosition": "OG",
     "dPosition": "CB",
-    "number": "3,"
+    "number": "3"
   },
   {
     "firstName": "Orrin",
@@ -67,7 +36,7 @@ const playerSeed = [
     "cellphone": "(674) 9254284",
     "oPosition": "TE",
     "dPosition": "DT",
-    "number": "4,"
+    "number": "4"
   },
   {
     "firstName": "Lennard",
@@ -77,7 +46,7 @@ const playerSeed = [
     "cellphone": "(812) 1380861",
     "oPosition": "RB",
     "dPosition": "OLB",
-    "number": "5,"
+    "number": "5"
   },
   {
     "firstName": "Damien",
@@ -87,7 +56,7 @@ const playerSeed = [
     "cellphone": "(515) 2975312",
     "oPosition": "FB",
     "dPosition": "DT",
-    "number": "6,"
+    "number": "6"
   },
   {
     "firstName": "Frants",
@@ -97,7 +66,7 @@ const playerSeed = [
     "cellphone": "(783) 5550353",
     "oPosition": "C",
     "dPosition": "CB",
-    "number": "7,"
+    "number": "7"
   },
   {
     "firstName": "Tobie",
@@ -107,7 +76,7 @@ const playerSeed = [
     "cellphone": "(480) 3193305",
     "oPosition": "C",
     "dPosition": "CB",
-    "number": "8,"
+    "number": "8"
   },
   {
     "firstName": "Raimund",
@@ -117,7 +86,7 @@ const playerSeed = [
     "cellphone": "(639) 8761905",
     "oPosition": "WR",
     "dPosition": "OLB",
-    "number": "9,"
+    "number": "9"
   },
   {
     "firstName": "Nye",
@@ -127,7 +96,7 @@ const playerSeed = [
     "cellphone": "(978) 7179170",
     "oPosition": "TE",
     "dPosition": "CB",
-    "number": "10",
+    "number": "10"
   },
   {
     "firstName": "Thayne",
@@ -137,7 +106,7 @@ const playerSeed = [
     "cellphone": "(946) 3124305",
     "oPosition": "C",
     "dPosition": "OLB",
-    "number": "11",
+    "number": "11"
   },
   {
     "firstName": "Torr",
@@ -147,7 +116,7 @@ const playerSeed = [
     "cellphone": "(247) 9341530",
     "oPosition": "C",
     "dPosition": "OLB",
-    "number": "12",
+    "number": "12"
   },
   {
     "firstName": "Faber",
@@ -157,7 +126,7 @@ const playerSeed = [
     "cellphone": "(642) 3129854",
     "oPosition": "RB",
     "dPosition": "ILB",
-    "number": "13",
+    "number": "13"
   },
   {
     "firstName": "Lindon",
@@ -167,7 +136,7 @@ const playerSeed = [
     "cellphone": "(371) 9323084",
     "oPosition": "C",
     "dPosition": "SS",
-    "number": "14",
+    "number": "14"
   },
   {
     "firstName": "Domenic",
@@ -177,7 +146,7 @@ const playerSeed = [
     "cellphone": "(197) 4487099",
     "oPosition": "OT",
     "dPosition": "DE",
-    "number": "15",
+    "number": "15"
   },
   {
     "firstName": "Dane",
@@ -187,7 +156,7 @@ const playerSeed = [
     "cellphone": "(915) 2228891",
     "oPosition": "RB",
     "dPosition": "CB",
-    "number": "16",
+    "number": "16"
   },
   {
     "firstName": "Connie",
@@ -197,7 +166,7 @@ const playerSeed = [
     "cellphone": "(628) 9701248",
     "oPosition": "QB",
     "dPosition": "SS",
-    "number": "17",
+    "number": "17"
   },
   {
     "firstName": "Floyd",
@@ -207,7 +176,7 @@ const playerSeed = [
     "cellphone": "(288) 6525414",
     "oPosition": "QB",
     "dPosition": "DE",
-    "number": "18",
+    "number": "18"
   },
   {
     "firstName": "Ezechiel",
@@ -217,7 +186,7 @@ const playerSeed = [
     "cellphone": "(717) 7917629",
     "oPosition": "RB",
     "dPosition": "FS",
-    "number": "19",
+    "number": "19"
   },
   {
     "firstName": "Lorne",
@@ -227,7 +196,7 @@ const playerSeed = [
     "cellphone": "(670) 4919943",
     "oPosition": "WR",
     "dPosition": "OLB",
-    "number": "20",
+    "number": "20"
   },
   {
     "firstName": "Frazier",
@@ -237,7 +206,7 @@ const playerSeed = [
     "cellphone": "(337) 7704056",
     "oPosition": "WR",
     "dPosition": "FS",
-    "number": "21",
+    "number": "21"
   },
   {
     "firstName": "Abram",
@@ -247,7 +216,7 @@ const playerSeed = [
     "cellphone": "(192) 3309405",
     "oPosition": "OT",
     "dPosition": "FS",
-    "number": "22",
+    "number": "22"
   },
   {
     "firstName": "Greg",
@@ -257,7 +226,7 @@ const playerSeed = [
     "cellphone": "(755) 6431361",
     "oPosition": "C",
     "dPosition": "FS",
-    "number": "23",
+    "number": "23"
   },
   {
     "firstName": "Jeffrey",
@@ -267,7 +236,7 @@ const playerSeed = [
     "cellphone": "(857) 9572232",
     "oPosition": "TE",
     "dPosition": "SS",
-    "number": "24",
+    "number": "24"
   },
   {
     "firstName": "Izak",
@@ -277,7 +246,7 @@ const playerSeed = [
     "cellphone": "(685) 7081925",
     "oPosition": "FB",
     "dPosition": "CB",
-    "number": "25",
+    "number": "25"
   },
   {
     "firstName": "Huntley",
@@ -287,7 +256,7 @@ const playerSeed = [
     "cellphone": "(452) 6150867",
     "oPosition": "RB",
     "dPosition": "DT",
-    "number": "26",
+    "number": "26"
   },
   {
     "firstName": "Serge",
@@ -297,7 +266,7 @@ const playerSeed = [
     "cellphone": "(997) 5706430",
     "oPosition": "WR",
     "dPosition": "OLB",
-    "number": "27",
+    "number": "27"
   },
   {
     "firstName": "Wallace",
@@ -307,7 +276,7 @@ const playerSeed = [
     "cellphone": "(645) 9350445",
     "oPosition": "RB",
     "dPosition": "OLB",
-    "number": "28",
+    "number": "28"
   },
   {
     "firstName": "Aguie",
@@ -317,7 +286,7 @@ const playerSeed = [
     "cellphone": "(500) 2945824",
     "oPosition": "C",
     "dPosition": "DT",
-    "number": "29",
+    "number": "29"
   },
   {
     "firstName": "Garner",
@@ -327,7 +296,7 @@ const playerSeed = [
     "cellphone": "(456) 6118348",
     "oPosition": "RB",
     "dPosition": "CB",
-    "number": "30",
+    "number": "30"
   },
   {
     "firstName": "Vail",
@@ -337,7 +306,7 @@ const playerSeed = [
     "cellphone": "(138) 1949487",
     "oPosition": "OT",
     "dPosition": "CB",
-    "number": "31",
+    "number": "31"
   },
   {
     "firstName": "Federico",
@@ -347,7 +316,7 @@ const playerSeed = [
     "cellphone": "(258) 8519699",
     "oPosition": "FB",
     "dPosition": "SS",
-    "number": "32",
+    "number": "32"
   },
   {
     "firstName": "Donal",
@@ -357,7 +326,7 @@ const playerSeed = [
     "cellphone": "(823) 6679029",
     "oPosition": "FB",
     "dPosition": "DE",
-    "number": "33",
+    "number": "33"
   },
   {
     "firstName": "Gib",
@@ -367,7 +336,7 @@ const playerSeed = [
     "cellphone": "(264) 6311865",
     "oPosition": "OT",
     "dPosition": "FS",
-    "number": "34",
+    "number": "34"
   },
   {
     "firstName": "Shamus",
@@ -377,7 +346,7 @@ const playerSeed = [
     "cellphone": "(245) 5545239",
     "oPosition": "QB",
     "dPosition": "DE",
-    "number": "35",
+    "number": "35"
   },
   {
     "firstName": "Lewiss",
@@ -387,7 +356,7 @@ const playerSeed = [
     "cellphone": "(466) 4673963",
     "oPosition": "RB",
     "dPosition": "FS",
-    "number": "36",
+    "number": "36"
   },
   {
     "firstName": "Reg",
@@ -397,7 +366,7 @@ const playerSeed = [
     "cellphone": "(449) 7742609",
     "oPosition": "C",
     "dPosition": "CB",
-    "number": "37",
+    "number": "37"
   },
   {
     "firstName": "Neal",
@@ -407,7 +376,7 @@ const playerSeed = [
     "cellphone": "(712) 1284566",
     "oPosition": "TE",
     "dPosition": "OLB",
-    "number": "38",
+    "number": "38"
   },
   {
     "firstName": "Giorgi",
@@ -417,7 +386,7 @@ const playerSeed = [
     "cellphone": "(395) 3675148",
     "oPosition": "OT",
     "dPosition": "OLB",
-    "number": "39",
+    "number": "39"
   },
   {
     "firstName": "Hendrick",
@@ -427,7 +396,7 @@ const playerSeed = [
     "cellphone": "(452) 1013909",
     "oPosition": "QB",
     "dPosition": "DT",
-    "number": "40",
+    "number": "40"
   },
   {
     "firstName": "Waylon",
@@ -437,7 +406,7 @@ const playerSeed = [
     "cellphone": "(840) 6125877",
     "oPosition": "OT",
     "dPosition": "CB",
-    "number": "41",
+    "number": "41"
   },
   {
     "firstName": "Ashby",
@@ -447,7 +416,7 @@ const playerSeed = [
     "cellphone": "(694) 8927769",
     "oPosition": "QB",
     "dPosition": "DE",
-    "number": "42",
+    "number": "42"
   },
   {
     "firstName": "Rudolfo",
@@ -457,7 +426,7 @@ const playerSeed = [
     "cellphone": "(917) 8164036",
     "oPosition": "RB",
     "dPosition": "ILB",
-    "number": "43",
+    "number": "43"
   },
   {
     "firstName": "Erny",
@@ -467,12 +436,5 @@ const playerSeed = [
     "cellphone": "(918) 2640484",
     "oPosition": "FB",
     "dPosition": "ILB",
-    "number": "44",
+    "number": "44"
   }
-];
-
-db.Team.updateMany({}, { $push: { players: playerSeed } })
-  .then((dbModel) => {
-    console.log("you did it!");
-  })
-  .catch((err) => res.status(422).json(err));

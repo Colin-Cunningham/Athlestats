@@ -19,6 +19,7 @@ function AddPlayers(props) {
 
   function AddPlayer(event) {
     event.preventDefault();
+    const history = useHistory;
     API.addPlayer({
       firstName: first,
       lastName: last,
@@ -34,10 +35,10 @@ function AddPlayers(props) {
       .then((res) => {
         history.push("/dash/" + email)
       })
-      .catch((err) => alert("Number already taken"));
+      .catch((err) => alert(err));
   }
 
-  let history = useHistory();
+
 
 
   return (

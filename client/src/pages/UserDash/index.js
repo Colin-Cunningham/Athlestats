@@ -8,6 +8,9 @@ import AddPlayer from "../../components/AddPlayers/index";
 import Profile from "../../components/Profile/index";
 import Stats from "../../components/Stats/index";
 import Individual from "../../components/Individual/index";
+import NoMatch from "../../components/NoMatch/index"
+
+
 
 function DashNav() {
   const [user, setUser] = useState([]);

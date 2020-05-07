@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashnav from "./pages/UserDash/index"
 import Footer from "./components/Footer/Index"
+import NoMatch from "./components/NoMatch/index"
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path={["/dash/:email"]}>
             <Dashnav />
+          </Route>
+          <Route path={"/dash"}>
+            <NoMatch />
           </Route>
         </Switch>
       </>

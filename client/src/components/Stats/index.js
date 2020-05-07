@@ -26,11 +26,18 @@ function Stats(props) {
   return (
     <>
       <div id="container">
+       {team ? (
+         <>
+        <h3>{team.highschool} {team.name}</h3>
+        <div id="teamInfo">
        
-      <div id="teamInfo">
-       <h3>{team.highschool} {team.name}</h3>
-      <h4 > {team.city},{team.state}</h4>
-      </div>
+        <h4 > {team.city},{team.state}</h4>
+        </div>
+        </>
+       ) : (
+         <h4>You need to create a team</h4>
+       )
+       }
 
         <div className="do">
           <h4>Your Roster</h4>

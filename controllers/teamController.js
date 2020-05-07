@@ -15,7 +15,7 @@ module.exports = {
   },
   createPlayer: function (req, res) {
     console.log(req.body);
-    db.Team.update({ _id: req.body.teamID }, { $push: { players: req.body } })
+    db.Team.findOneAndUpdate({ teamID: req.body.teamID }, { $push: { players: req.body } })
       .then((dbModel) => {
         res.json(dbModel);
       })
